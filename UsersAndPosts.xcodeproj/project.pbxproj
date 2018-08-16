@@ -13,8 +13,8 @@
 		D67CEE652125BE6E004F35E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67CEE632125BE6E004F35E1 /* Main.storyboard */; };
 		D67CEE672125BE70004F35E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67CEE662125BE70004F35E1 /* Assets.xcassets */; };
 		D67CEE6A2125BE70004F35E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67CEE682125BE70004F35E1 /* LaunchScreen.storyboard */; };
-		D67CEE782125BFC9004F35E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE762125BFC9004F35E1 /* DetailViewController.swift */; };
-		D67CEE792125BFC9004F35E1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE772125BFC9004F35E1 /* MasterViewController.swift */; };
+		D67CEE782125BFC9004F35E1 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE762125BFC9004F35E1 /* PostsViewController.swift */; };
+		D67CEE792125BFC9004F35E1 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE772125BFC9004F35E1 /* UsersViewController.swift */; };
 		D67CEE7D2125BFD1004F35E1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE7C2125BFD1004F35E1 /* UserTableViewCell.swift */; };
 		D67CEE802125C1A2004F35E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE7F2125C1A2004F35E1 /* User.swift */; };
 /* End PBXBuildFile section */
@@ -28,8 +28,8 @@
 		D67CEE662125BE70004F35E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67CEE692125BE70004F35E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D67CEE6B2125BE70004F35E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D67CEE762125BFC9004F35E1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D67CEE772125BFC9004F35E1 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		D67CEE762125BFC9004F35E1 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		D67CEE772125BFC9004F35E1 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D67CEE7C2125BFD1004F35E1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D67CEE7F2125C1A2004F35E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,8 +79,8 @@
 		D67CEE752125BFC9004F35E1 /* view-controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D67CEE762125BFC9004F35E1 /* DetailViewController.swift */,
-				D67CEE772125BFC9004F35E1 /* MasterViewController.swift */,
+				D67CEE762125BFC9004F35E1 /* PostsViewController.swift */,
+				D67CEE772125BFC9004F35E1 /* UsersViewController.swift */,
 			);
 			path = "view-controllers";
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 			files = (
 				D67CEE7D2125BFD1004F35E1 /* UserTableViewCell.swift in Sources */,
 				D67CEE5E2125BE6E004F35E1 /* AppDelegate.swift in Sources */,
-				D67CEE782125BFC9004F35E1 /* DetailViewController.swift in Sources */,
+				D67CEE782125BFC9004F35E1 /* PostsViewController.swift in Sources */,
 				D67CEE802125C1A2004F35E1 /* User.swift in Sources */,
-				D67CEE792125BFC9004F35E1 /* MasterViewController.swift in Sources */,
+				D67CEE792125BFC9004F35E1 /* UsersViewController.swift in Sources */,
 				D66D0CA52125F631001D831C /* Post.swift in Sources */,
 				D66D0CA32125F53C001D831C /* PostTableViewCell.swift in Sources */,
 			);

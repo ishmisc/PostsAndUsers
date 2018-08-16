@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  UsersViewController.swift
 //  UsersAndPosts
 //
 //  Created by Iurii Shevchuk on 2018-08-16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class UsersViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: PostsViewController? = nil
     var users : [User] = []
 
 
@@ -21,7 +21,7 @@ class MasterViewController: UITableViewController {
 
         if let split = splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+            self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? PostsViewController
         }
 
         self.fetchUsers()
@@ -40,7 +40,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let user = users[indexPath.row]
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
+                let controller = (segue.destination as! UINavigationController).topViewController as! PostsViewController
                 controller.currentUser = user
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

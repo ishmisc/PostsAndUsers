@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  PostsViewController.swift
 //  UsersAndPosts
 //
 //  Created by Iurii Shevchuk on 2018-08-16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UITableViewController {
+class PostsViewController: UITableViewController {
 
     var currentUser: User? {
         didSet {
@@ -125,7 +125,7 @@ class DetailViewController: UITableViewController {
 // MARK: -
 // MARK: -
 
-extension DetailViewController {
+extension PostsViewController {
     struct CurrentRequest {
         let task : URLSessionTask
         let userId : Int

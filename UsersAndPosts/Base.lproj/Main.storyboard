@@ -42,7 +42,7 @@
         <!--Users-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Users" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="UsersAndPosts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Users" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="UsersViewController" customModule="UsersAndPosts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
         <!--Posts-->
         <scene sceneID="5bu-GG-lcW">
             <objects>
-                <tableViewController title="Posts" id="Pd9-Lt-VTQ" customClass="DetailViewController" customModule="UsersAndPosts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Posts" id="Pd9-Lt-VTQ" customClass="PostsViewController" customModule="UsersAndPosts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Og-rW-xEJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
