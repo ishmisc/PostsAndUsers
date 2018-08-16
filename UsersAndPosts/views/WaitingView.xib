@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WaitingView" customModule="UsersAndPosts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNm-Ks-4UK">
+                    <rect key="frame" x="134.5" y="289.5" width="106" height="88"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz7-RF-Cvd" userLabel="wait_label">
+                            <rect key="frame" x="10" y="57" width="86" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zqb-Mw-XKm">
+                            <rect key="frame" x="34.5" y="10" width="37" height="37"/>
+                            <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="pz7-RF-Cvd" firstAttribute="top" secondItem="Zqb-Mw-XKm" secondAttribute="bottom" constant="10" id="6bg-kg-umA"/>
+                        <constraint firstAttribute="bottom" secondItem="pz7-RF-Cvd" secondAttribute="bottom" constant="10" id="H95-mr-b47"/>
+                        <constraint firstItem="pz7-RF-Cvd" firstAttribute="leading" secondItem="YNm-Ks-4UK" secondAttribute="leading" constant="10" id="IY3-P3-VrT"/>
+                        <constraint firstItem="Zqb-Mw-XKm" firstAttribute="top" secondItem="YNm-Ks-4UK" secondAttribute="top" constant="10" id="jyk-n6-GU9"/>
+                        <constraint firstAttribute="trailing" secondItem="pz7-RF-Cvd" secondAttribute="trailing" constant="10" id="ssI-1s-KHj"/>
+                        <constraint firstItem="Zqb-Mw-XKm" firstAttribute="centerX" secondItem="YNm-Ks-4UK" secondAttribute="centerX" id="z6E-lA-WpQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YNm-Ks-4UK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BJD-hF-y5M"/>
+                <constraint firstItem="YNm-Ks-4UK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="l5u-e7-B6F"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="centralContainerView" destination="YNm-Ks-4UK" id="Psx-Mu-C8x"/>
+            </connections>
+        </view>
+    </objects>
+</document>

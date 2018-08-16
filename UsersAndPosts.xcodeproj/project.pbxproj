@@ -17,6 +17,9 @@
 		D67CEE792125BFC9004F35E1 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE772125BFC9004F35E1 /* UsersViewController.swift */; };
 		D67CEE7D2125BFD1004F35E1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE7C2125BFD1004F35E1 /* UserTableViewCell.swift */; };
 		D67CEE802125C1A2004F35E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67CEE7F2125C1A2004F35E1 /* User.swift */; };
+		D6C50EBA2126062000DF1052 /* WaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C50EB92126062000DF1052 /* WaitingView.swift */; };
+		D6C50EBC2126066700DF1052 /* WaitingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C50EBB2126066700DF1052 /* WaitingView.xib */; };
+		D6C50EBF21260A8A00DF1052 /* AutoLayoutConstraintsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C50EBE21260A8A00DF1052 /* AutoLayoutConstraintsUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		D67CEE772125BFC9004F35E1 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		D67CEE7C2125BFD1004F35E1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D67CEE7F2125C1A2004F35E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D6C50EB92126062000DF1052 /* WaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingView.swift; sourceTree = "<group>"; };
+		D6C50EBB2126066700DF1052 /* WaitingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WaitingView.xib; sourceTree = "<group>"; };
+		D6C50EBE21260A8A00DF1052 /* AutoLayoutConstraintsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutConstraintsUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				D67CEE7E2125C195004F35E1 /* model */,
+				D6C50EBD21260A6B00DF1052 /* utilities */,
 				D67CEE752125BFC9004F35E1 /* view-controllers */,
 				D67CEE7A2125BFD1004F35E1 /* views */,
 				D67CEE5D2125BE6E004F35E1 /* AppDelegate.swift */,
@@ -88,6 +95,8 @@
 		D67CEE7A2125BFD1004F35E1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D6C50EB92126062000DF1052 /* WaitingView.swift */,
+				D6C50EBB2126066700DF1052 /* WaitingView.xib */,
 				D67CEE7B2125BFD1004F35E1 /* tableview-cells */,
 			);
 			path = views;
@@ -109,6 +118,14 @@
 				D67CEE7F2125C1A2004F35E1 /* User.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		D6C50EBD21260A6B00DF1052 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D6C50EBE21260A8A00DF1052 /* AutoLayoutConstraintsUtils.swift */,
+			);
+			path = utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +188,7 @@
 			files = (
 				D67CEE6A2125BE70004F35E1 /* LaunchScreen.storyboard in Resources */,
 				D67CEE672125BE70004F35E1 /* Assets.xcassets in Resources */,
+				D6C50EBC2126066700DF1052 /* WaitingView.xib in Resources */,
 				D67CEE652125BE6E004F35E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,10 +202,12 @@
 			files = (
 				D67CEE7D2125BFD1004F35E1 /* UserTableViewCell.swift in Sources */,
 				D67CEE5E2125BE6E004F35E1 /* AppDelegate.swift in Sources */,
+				D6C50EBA2126062000DF1052 /* WaitingView.swift in Sources */,
 				D67CEE782125BFC9004F35E1 /* PostsViewController.swift in Sources */,
 				D67CEE802125C1A2004F35E1 /* User.swift in Sources */,
 				D67CEE792125BFC9004F35E1 /* UsersViewController.swift in Sources */,
 				D66D0CA52125F631001D831C /* Post.swift in Sources */,
+				D6C50EBF21260A8A00DF1052 /* AutoLayoutConstraintsUtils.swift in Sources */,
 				D66D0CA32125F53C001D831C /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
