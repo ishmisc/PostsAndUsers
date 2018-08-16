@@ -13,6 +13,8 @@ class UsersViewController: UITableViewController {
     var detailViewController: PostsViewController? = nil
     var users : [User] = []
 
+    private var waitingView : WaitingView = WaitingView.loadFromNib()
+    private var pendingLoadingTask : URLSessionTask?
 
     // MARK: - View lifecycle
 
@@ -24,13 +26,17 @@ class UsersViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? PostsViewController
         }
 
-        self.fetchUsers()
+        self.pendingLoadingTask = self.fetchUsers()
     }
 
 
     override func viewWillAppear(_ animated: Bool) {
         self.clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+
+        if self.pendingLoadingTask != nil {
+            self.waitingView.addToMainWindow()
+        }
     }
 
 
@@ -51,11 +57,16 @@ class UsersViewController: UITableViewController {
 
     // MARK: - Users fetching
 
-    func fetchUsers() {
+    @discardableResult
+    func fetchUsers() -> URLSessionTask {
         let session = URLSession.init(configuration: .default)
 
         let usersURL = URL.init(string: "https://jsonplaceholder.typicode.com/users")!
         let task = session.dataTask(with: usersURL) { [weak self] (data, urlResponse, error) in
+
+            DispatchQueue.main.async {
+                self?.waitingView.removeFromSuperview()
+            }
 
             if error == nil && data != nil {
 
@@ -63,8 +74,7 @@ class UsersViewController: UITableViewController {
 
                 if let usersArray = try? JSONDecoder().decode(UsersArray.self, from: data!) {
                     DispatchQueue.main.async {
-                        self?.users = usersArray
-                        self?.tableView.reloadData()
+                        self?.setUsers(usersArray)
                     }
 
                 } else {
@@ -81,6 +91,16 @@ class UsersViewController: UITableViewController {
         }
 
         task.resume()
+
+        return task
+    }
+
+
+    private func setUsers(_ users : [User]) {
+        self.pendingLoadingTask = nil
+        self.waitingView.removeFromSuperview()
+        self.users = users
+        self.tableView.reloadData()
     }
 
 
