@@ -62,8 +62,6 @@ class UsersViewController: UITableViewController {
                 typealias UsersArray = [User]
 
                 if let usersArray = try? JSONDecoder().decode(UsersArray.self, from: data!) {
-                    print(usersArray)
-
                     DispatchQueue.main.async {
                         self?.users = usersArray
                         self?.tableView.reloadData()
@@ -74,7 +72,11 @@ class UsersViewController: UITableViewController {
                 }
 
             } else {
-                print(error)
+                if let error = error {
+                    print(error)
+                } else {
+                    print("Unkown error")
+                }
             }
         }
 

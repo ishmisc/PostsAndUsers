@@ -72,8 +72,6 @@ class PostsViewController: UITableViewController {
                 typealias PostsArray = [Post]
 
                 if let postsArray = try? JSONDecoder().decode(PostsArray.self, from: data!) {
-                    print(postsArray)
-
                     DispatchQueue.main.async {
                         if  let userId = self?.currentUser?.id,
                             userId == postsUserId
@@ -88,7 +86,11 @@ class PostsViewController: UITableViewController {
                 }
 
             } else {
-                print(error)
+                if let error = error {
+                    print(error)
+                } else {
+                    print("Unkown error")
+                }
             }
         }
 
