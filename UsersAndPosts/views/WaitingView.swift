@@ -20,19 +20,26 @@ class WaitingView: UIView {
         self.centralContainerView.layer.cornerRadius = 5
         self.centralContainerView.clipsToBounds = true
     }
+    
 
     func addToMainWindow() {
 
         guard self.superview == nil else { return }
 
         if let window = AppDelegate.current.window {
+            self.addToView(window)
+        }
+    }
 
-            self.translatesAutoresizingMaskIntoConstraints = false
-            window.addSubview(self)
 
-            if let constrs = NSLayoutConstraint.createEqualWithHeightToSuper(forView: self) {
-                NSLayoutConstraint.activate(constrs)
-            }
+    func addToView(_ view : UIView) {
+        guard self.superview == nil else { return }
+
+        self.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+
+        if let constrs = NSLayoutConstraint.createEqualWithHeightToSuper(forView: self) {
+            NSLayoutConstraint.activate(constrs)
         }
     }
 }
