@@ -20,12 +20,52 @@ class PostsViewController: UITableViewController {
     private var currentPosts : [Post] = []
 
 
+    // MARK: - Object lifecycle
+
+    deinit {
+        self.currentRequest?.task.cancel()
+    }
+
+
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.updatePosts()
+        if self.currentRequest != nil {
+            self.setUIToLoadingState()
+        }
+    }
+
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // At this point we know that there is no other case
+        // where this VC is disappearing beside being closed by user.
+        // This is why we can cancel post requests
+        self.currentRequest?.task.cancel()
+        self.currentRequest = nil
+    }
+
+
+    // MARK: - Private UI related
+
+    private func reloadTableView() {
+        guard self.isViewLoaded else { return }
+        self.tableView.reloadData()
+    }
+
+
+    private func setUIToLoadingState() {
+        guard self.isViewLoaded else { return }
+        self.title = "Please wait"
+    }
+
+
+    private func setUIToPresentationState() {
+        guard self.isViewLoaded else { return }
+        self.title = "Posts"
     }
 
 
@@ -37,7 +77,7 @@ class PostsViewController: UITableViewController {
             self.currentRequest?.task.cancel()
             self.currentRequest = nil
             self.currentPosts.removeAll()
-            self.tableView.reloadData()
+            self.reloadTableView()
             return
         }
 
@@ -53,6 +93,8 @@ class PostsViewController: UITableViewController {
 
             let newTask = self.getPostsForUser(user)
 
+            self.setUIToLoadingState()
+            
             self.currentRequest = CurrentRequest(task: newTask, userId: user.id)
             newTask.resume()
         }
@@ -67,6 +109,10 @@ class PostsViewController: UITableViewController {
 
         let postsUserId = user.id
         let task = session.dataTask(with: postsURL) { [weak self] (data, response, error) in
+            DispatchQueue.main.async {
+                self?.setUIToPresentationState()
+                self?.currentRequest = nil
+            }
             if error == nil && data != nil {
 
                 typealias PostsArray = [Post]
@@ -77,7 +123,7 @@ class PostsViewController: UITableViewController {
                             userId == postsUserId
                         {
                             self?.currentPosts = postsArray
-                            self?.tableView.reloadData()
+                            self?.reloadTableView()
                         }
                     }
 
